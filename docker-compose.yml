@@ -1,0 +1,22 @@
+services:
+  node1:
+    build: .
+    ports:
+      - "8001:8000"
+      - "9001:9001"
+    command: ["./blockchain", "8001"]
+    networks:
+      default:
+        aliases:
+          - node1
+
+  node2:
+    build: .
+    ports:
+      - "8002:8000"
+      - "9002:9002"
+    command: ["./blockchain", "8002"]
+    networks:
+      default:
+        aliases:
+          - node2
